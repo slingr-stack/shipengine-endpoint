@@ -1,0 +1,70 @@
+{
+  "label": "ShipEngine",
+  "name": "shipengine",
+  "apiVersion": "v1",
+  "internal": false,
+  "configurationType": "GLOBAL",
+  "deployment": {
+    "profiles": [
+      {
+        "name": "default",
+        "label": "Default",
+        "memory": 256,
+        "description": "Default configuration"
+      }
+    ],
+    "allowMultipleInstances": false
+  },
+  "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/shippo.png",
+  "configurationHelpUrl": "/endpoints_shipengine.html",
+  "status": "ACTIVE",
+  "stores": [],
+  "events": [
+    {
+      "label": "Webhook",
+      "name": "webhook",
+      "description": "When we receive a webhook from ShipEngine"
+    }
+  ],
+  "functions": [
+    {
+      "label": "GET",
+      "name": "_get"
+    },
+    {
+      "label": "POST",
+      "name": "_post"
+    },
+    {
+      "label": "PUT",
+      "name": "_put"
+    },
+    {
+      "label": "DELETE",
+      "name": "_delete"
+    },
+    {
+      "label": "PATCH",
+      "name": "_patch"
+    }
+  ],
+  "scripts": [
+    "shipengine-helpers.js",
+    "functions.js"
+  ],
+  "listeners": [],
+  "configuration": [
+    {
+      "label": "API Token",
+      "name": "apiToken",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "webhook",
+      "label": "Webhook URL",
+      "type": "label",
+      "value": "@config.WEBHOOK_URL"
+    }
+  ]
+}
