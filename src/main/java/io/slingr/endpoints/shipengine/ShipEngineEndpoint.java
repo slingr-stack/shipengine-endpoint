@@ -19,7 +19,7 @@ public class ShipEngineEndpoint extends HttpEndpoint {
 
     private final String API_URL = "https://api.shipengine.com/v1";
 
-    private static final Logger logger = Logger.getLogger(ShippoEndpoint.class);
+    private static final Logger logger = Logger.getLogger(ShipEngineEndpoint.class);
 
     @EndpointProperty
     private String apiToken;

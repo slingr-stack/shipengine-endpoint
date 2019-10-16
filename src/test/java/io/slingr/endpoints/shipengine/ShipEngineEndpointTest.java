@@ -1,6 +1,6 @@
 package io.slingr.endpoints.shipengine;
 
-import io.slingr.endpoints.shippo.ShipEngineEndpoint;
+import io.slingr.endpoints.shipengine.ShipEngineEndpoint;
 import io.slingr.endpoints.utils.tests.EndpointTests;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -14,7 +14,7 @@ public class ShipEngineEndpointTest {
 
     @BeforeClass
     public static void init() throws Exception {
-        test = EndpointTests.start(new io.slingr.endpoints.shippo.Runner(), "test.properties");
+        test = EndpointTests.start(new io.slingr.endpoints.shipengine.Runner(), "test.properties");
         endpoint = (ShipEngineEndpoint) test.getEndpoint();
     }
 
