@@ -2,7 +2,7 @@
 //                                                                      //
 //    This file is generated with shipengine/gen/gen-shipengine-helpers.js//
 //                                                                      //
-//            Sat Oct 19 2019 19:32:05 GMT-0300 (-03)                   //
+//            Sat Oct 19 2019 19:52:08 GMT-0300 (-03)                   //
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
@@ -76,6 +76,9 @@ var urlsData = {
 	},
 	"labels.shipment.post": {
 		"1": "labels/shipment/:shipmentId"
+	},
+	"labels.void.put": {
+		"1": "labels/:labelId/void"
 	},
 	"batches.post": {
 		"0": "batches/"
@@ -365,6 +368,14 @@ endpoint.labels.shipment.post = function() {
 	var params = analyzeParams(arguments);
 	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
 	return endpoint.post(url, params.argumentsObj);
+};
+
+endpoint.labels.void = {};
+endpoint.labels.void.put = function() {
+	var obj = urlsData['labels.void.put'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.put(url, params.argumentsObj);
 };
 
 endpoint.batches = {};

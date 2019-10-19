@@ -32,6 +32,7 @@ var API_DESCRIPTOR = [
     {method: 'POST', URL: 'labels/'},
     {method: 'POST', URL: 'labels/rates/:rateId'},
     {method: 'POST', URL: 'labels/shipment/:shipmentId'},
+    {method: 'PUT', URL: 'labels/:labelId/void'},
     {method: 'POST', URL: 'batches/'},
     {method: 'GET', URL: 'batches/:batchId'},
     {method: 'GET', URL: 'batches/external_batch_id/:externalBatchId'},
