@@ -2,7 +2,7 @@
 //                                                                      //
 //    This file is generated with shipengine/gen/gen-shipengine-helpers.js//
 //                                                                      //
-//            Wed Oct 16 2019 10:34:32 GMT-0300 (Argentina Standard Time)                   //
+//            Sat Oct 19 2019 19:32:05 GMT-0300 (-03)                   //
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
@@ -67,6 +67,15 @@ var urlsData = {
 	},
 	"labels.get": {
 		"0": "labels/"
+	},
+	"labels.post": {
+		"0": "labels/"
+	},
+	"labels.rates.post": {
+		"1": "labels/rates/:rateId"
+	},
+	"labels.shipment.post": {
+		"1": "labels/shipment/:shipmentId"
 	},
 	"batches.post": {
 		"0": "batches/"
@@ -333,6 +342,29 @@ endpoint.labels.get = function() {
 	var params = analyzeParams(arguments);
 	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
 	return endpoint.get(url);
+};
+
+endpoint.labels.post = function() {
+	var obj = urlsData['labels.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
+};
+
+endpoint.labels.rates = {};
+endpoint.labels.rates.post = function() {
+	var obj = urlsData['labels.rates.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
+};
+
+endpoint.labels.shipment = {};
+endpoint.labels.shipment.post = function() {
+	var obj = urlsData['labels.shipment.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
 };
 
 endpoint.batches = {};
