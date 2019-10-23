@@ -2,7 +2,7 @@
 //                                                                      //
 //    This file is generated with shipengine/gen/gen-shipengine-helpers.js//
 //                                                                      //
-//            Sat Oct 19 2019 19:52:08 GMT-0300 (-03)                   //
+//            Wed Oct 23 2019 11:17:47 GMT+0400 (+04)                   //
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
@@ -79,6 +79,12 @@ var urlsData = {
 	},
 	"labels.void.put": {
 		"1": "labels/:labelId/void"
+	},
+	"tracking.start.post": {
+		"0": "tracking/start"
+	},
+	"tracking.stop.post": {
+		"0": "tracking/stop"
 	},
 	"batches.post": {
 		"0": "batches/"
@@ -376,6 +382,23 @@ endpoint.labels.void.put = function() {
 	var params = analyzeParams(arguments);
 	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
 	return endpoint.put(url, params.argumentsObj);
+};
+
+endpoint.tracking = {};
+endpoint.tracking.start = {};
+endpoint.tracking.start.post = function() {
+	var obj = urlsData['tracking.start.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
+};
+
+endpoint.tracking.stop = {};
+endpoint.tracking.stop.post = function() {
+	var obj = urlsData['tracking.stop.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
 };
 
 endpoint.batches = {};
