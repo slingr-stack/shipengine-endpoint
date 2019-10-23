@@ -2,7 +2,7 @@
 //                                                                      //
 //    This file is generated with shipengine/gen/gen-shipengine-helpers.js//
 //                                                                      //
-//            Wed Oct 23 2019 11:17:47 GMT+0400 (+04)                   //
+//            Wed Oct 23 2019 11:35:24 GMT+0400 (+04)                   //
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
@@ -389,16 +389,16 @@ endpoint.tracking.start = {};
 endpoint.tracking.start.post = function() {
 	var obj = urlsData['tracking.start.post'];
 	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
+	return endpoint.post(url);
 };
 
 endpoint.tracking.stop = {};
 endpoint.tracking.stop.post = function() {
 	var obj = urlsData['tracking.stop.post'];
 	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
+	return endpoint.post(url);
 };
 
 endpoint.batches = {};

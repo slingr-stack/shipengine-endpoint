@@ -33,8 +33,8 @@ var API_DESCRIPTOR = [
     {method: 'POST', URL: 'labels/rates/:rateId'},
     {method: 'POST', URL: 'labels/shipment/:shipmentId'},
     {method: 'PUT', URL: 'labels/:labelId/void'},
-    {method: 'POST', URL: 'tracking/start'},
-    {method: 'POST', URL: 'tracking/stop'},
+    {method: 'POST', URL: 'tracking/start', argsToPath: true},
+    {method: 'POST', URL: 'tracking/stop', argsToPath: true},
     {method: 'POST', URL: 'batches/'},
     {method: 'GET', URL: 'batches/:batchId'},
     {method: 'GET', URL: 'batches/external_batch_id/:externalBatchId'},
@@ -130,6 +130,7 @@ var getUrl = function (url, params, args, argsToPath) {
 };
 
 var makeEndpointsHelpers = function () {
+    var argsToPathUrls = [];
 
         for (var i in API_DESCRIPTOR) {
 
@@ -161,7 +162,9 @@ var makeEndpointsHelpers = function () {
             }
 
             urlsData[functionName][numVars] = url;
-
+            if (objDes.argsToPath) {
+                argsToPathUrls.push(functionName);
+            }
         }
 
     var tmpObj = {};
@@ -186,7 +189,7 @@ var makeEndpointsHelpers = function () {
                     var method = urlPart[j];
                     var caller = method;
                     var transfromArguments = 'true';
-                    if (method === 'get' || method === 'delete') {
+                    if (method === 'get' || method === 'delete' || argsToPathUrls.indexOf(i) != -1) {
                         caller += '(url)';
                         transfromArguments = 'true';
                     } else {
