@@ -56,6 +56,8 @@ var API_DESCRIPTOR = [
     {method: 'PUT', URL: 'connections/carriers/ups/:upsId/settings'},
     {method: 'GET', URL: 'connections/carriers/ups/:upsId/settings'},
     {method: 'DELETE', URL: 'connections/carriers/ups/:upsId'},
+    {method: 'POST', URL: 'connections/carriers/stamps_com'},
+    {method: 'DELETE', URL: 'connections/carriers/stamps_com/:stampsId'},
     {method: 'GET', URL: 'carriers/'},
     {method: 'GET', URL: 'carriers/:carrierId/services'},
     {method: 'GET', URL: 'carriers/:carrierId/options'},

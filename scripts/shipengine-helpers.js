@@ -2,7 +2,7 @@
 //                                                                      //
 //    This file is generated with shipengine/gen/gen-shipengine-helpers.js//
 //                                                                      //
-//            Wed Oct 23 2019 11:35:24 GMT+0400 (+04)                   //
+//            Mon Jan 06 2020 17:22:47 GMT-0300 (-03)                   //
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
@@ -146,6 +146,12 @@ var urlsData = {
 	},
 	"connections.carriers.ups.delete": {
 		"1": "connections/carriers/ups/:upsId"
+	},
+	"connections.carriers.stampsCom.post": {
+		"0": "connections/carriers/stamps_com"
+	},
+	"connections.carriers.stampsCom.delete": {
+		"1": "connections/carriers/stamps_com/:stampsId"
 	},
 	"carriers.get": {
 		"0": "carriers/",
@@ -553,6 +559,21 @@ endpoint.connections.carriers.ups.settings.get = function() {
 
 endpoint.connections.carriers.ups.delete = function() {
 	var obj = urlsData['connections.carriers.ups.delete'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
+	return endpoint.delete(url);
+};
+
+endpoint.connections.carriers.stampsCom = {};
+endpoint.connections.carriers.stampsCom.post = function() {
+	var obj = urlsData['connections.carriers.stampsCom.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
+};
+
+endpoint.connections.carriers.stampsCom.delete = function() {
+	var obj = urlsData['connections.carriers.stampsCom.delete'];
 	var params = analyzeParams(arguments);
 	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
 	return endpoint.delete(url);
