@@ -58,6 +58,8 @@ var API_DESCRIPTOR = [
     {method: 'DELETE', URL: 'connections/carriers/ups/:upsId'},
     {method: 'POST', URL: 'connections/carriers/stamps_com'},
     {method: 'DELETE', URL: 'connections/carriers/stamps_com/:stampsId'},
+    {method: 'POST', URL: 'connections/carriers/endicia'},
+    {method: 'DELETE', URL: 'connections/carriers/endicia/:endiciaId'},
     {method: 'GET', URL: 'carriers/'},
     {method: 'GET', URL: 'carriers/:carrierId/services'},
     {method: 'GET', URL: 'carriers/:carrierId/options'},
