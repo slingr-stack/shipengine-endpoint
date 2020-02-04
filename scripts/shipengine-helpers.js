@@ -153,6 +153,12 @@ var urlsData = {
 	"connections.carriers.stampsCom.delete": {
 		"1": "connections/carriers/stamps_com/:stampsId"
 	},
+	"connections.carriers.endicia.post": {
+		"0": "connections/carriers/endicia"
+	},
+	"connections.carriers.endicia.delete": {
+		"1": "connections/carriers/endicia/:endiciaId"
+	},
 	"carriers.get": {
 		"0": "carriers/",
 		"1": "carriers/:carrierId"
@@ -574,6 +580,21 @@ endpoint.connections.carriers.stampsCom.post = function() {
 
 endpoint.connections.carriers.stampsCom.delete = function() {
 	var obj = urlsData['connections.carriers.stampsCom.delete'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
+	return endpoint.delete(url);
+};
+
+endpoint.connections.carriers.endicia = {};
+endpoint.connections.carriers.endicia.post = function() {
+	var obj = urlsData['connections.carriers.endicia.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
+};
+
+endpoint.connections.carriers.endicia.delete = function() {
+	var obj = urlsData['connections.carriers.endicia.delete'];
 	var params = analyzeParams(arguments);
 	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
 	return endpoint.delete(url);
