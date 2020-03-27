@@ -40,7 +40,7 @@ public class ShipEngineEndpoint extends HttpEndpoint {
         }
     }
 
-    @EndpointFunction(name = "_put")
+    @EndpointFunction (name = "_put")
     public Json put(FunctionRequest request) {
         logger.debug(String.format("PUT [%s]", request.getJsonParams().string("path")));
         setRequestConfig(request);
