@@ -32,6 +32,7 @@ var API_DESCRIPTOR = [
     {method: 'POST', URL: 'labels/'},
     {method: 'POST', URL: 'labels/rates/:rateId'},
     {method: 'POST', URL: 'labels/shipment/:shipmentId'},
+    {method: 'POST', URL: 'labels/:label_id/return'},
     {method: 'PUT', URL: 'labels/:labelId/void'},
     {method: 'POST', URL: 'tracking/start', argsToPath: true},
     {method: 'POST', URL: 'tracking/stop', argsToPath: true},
