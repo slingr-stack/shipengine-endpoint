@@ -2,7 +2,7 @@
 //                                                                      //
 //    This file is generated with shipengine/gen/gen-shipengine-helpers.js//
 //                                                                      //
-//            Mon Jan 06 2020 17:22:47 GMT-0300 (-03)                   //
+//            Wed Oct 20 2021 23:34:02 GMT-0300 (hora estándar de Argentina)                   //
 //                                                                      //
 //////////////////////////////////////////////////////////////////////////
 
@@ -76,6 +76,9 @@ var urlsData = {
 	},
 	"labels.shipment.post": {
 		"1": "labels/shipment/:shipmentId"
+	},
+	"labels.return.post": {
+		"1": "labels/:label_id/return"
 	},
 	"labels.void.put": {
 		"1": "labels/:labelId/void"
@@ -383,6 +386,14 @@ endpoint.labels.rates.post = function() {
 endpoint.labels.shipment = {};
 endpoint.labels.shipment.post = function() {
 	var obj = urlsData['labels.shipment.post'];
+	var params = analyzeParams(arguments);
+	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
+	return endpoint.post(url, params.argumentsObj);
+};
+
+endpoint.labels.return = {};
+endpoint.labels.return.post = function() {
+	var obj = urlsData['labels.return.post'];
 	var params = analyzeParams(arguments);
 	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
 	return endpoint.post(url, params.argumentsObj);
