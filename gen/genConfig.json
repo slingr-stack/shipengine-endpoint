@@ -1,0 +1,881 @@
+{
+  "fileName": "shipengine-helpers",
+  "endpointName": "ShipEngine",
+  "omittableUrlParts": ["v1", {"replace":"v-beta", "with": "beta"}],
+  "apiDescriptors": [
+    {
+      "method": "PUT",
+      "url": "/v1/addresses/recognize",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/addresses/parse/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/parse_address"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/addresses/validate",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/addresses/validation/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/validate_address"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/batches",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-batches/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_batches"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/batches",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/reference/create-batch/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/batches/external_batch_id/:external_batch_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/get-batch-by-external-batch-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_batch_by_external_id"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/batches/:batch_id",
+      "prefix": "",
+      "suffix": "delete",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/archive-batch/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/delete_batch"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/batches/:batch_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/get-batch-by-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_batch_by_id"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/batches/:batch_id",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": [
+        "https://shipengine.github.io/shipengine-openapi/#operation/update_batch",
+        "https://shipengine.github.io/shipengine-openapi/#operation/update_batch"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/batches/:batch_id/add",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/add-to-batch/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/add_to_batch"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/batches/:batch_id/errors",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-batch-errors/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_batch_errors"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/batches/:batch_id/process/labels",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/process-batch/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/process_batch"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/batches/:batch_id/remove",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/remove-from-batch/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/remove_from_batch"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/connections/carriers/:carrier_name",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/carriers/connect/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/connect_carrier"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/connections/carriers/:carrier_name/:id",
+      "prefix": "",
+      "suffix": "delete",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/carriers/connect/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/disconnect_carrier"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/connections/carriers/:carrier_name/:id/settings",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/carriers/connect/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_carrier_settings"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/connections/carriers/:carrier_name/:id/settings",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/carriers/connect/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/update_carrier_settings"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/connections/carriers/:carrier_name/:carrier_id",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": ["https://www.shipengine.com/docs/reference/carriers/update-carrier/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/carriers",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-carriers/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_carriers"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/carriers/:carrier_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/get-carrier-by-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_carrier_by_id"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/carriers/:carrier_id/add_funds",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/carriers/add-funds/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/add_funds_to_carrier"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/carriers/:carrier_id/options",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-carrier-options/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_carrier_options"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/carriers/:carrier_id/packages",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-carrier-packages/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_carrier_package_types"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/carriers/:carrier_id/services",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": ["https://www.shipengine.com/docs/reference/list-carrier-services/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/downloads/:dir/:subdir/:filename",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/download_file"]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/connections/insurance/shipsurance",
+      "prefix": "",
+      "suffix": "disconnect",
+      "docsLink": [
+        "https://www.shipengine.com/docs/shipping/insurance/#adding-insurance-funds",
+        "https://shipengine.github.io/shipengine-openapi/#operation/disconnect_insurer"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/connections/insurance/shipsurance",
+      "prefix": "",
+      "suffix": "connect",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/connect_insurer"]
+    },
+    {
+      "method": "PATCH",
+      "url": "/v1/insurance/shipsurance/add_funds",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": ["https://www.shipengine.com/docs/shipping/insurance/#adding-insurance-funds"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/insurance/shipsurance/balance",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/shipping/insurance/#check-your-insurance-balance",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_insurance_balance"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/labels",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-labels/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_labels"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/labels",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/labels/create-a-label/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_label"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/labels/external_shipment_id/:external_shipment_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/get_label_by_external_shipment_id"]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/labels/rates/:rateId",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/labels/create-from-rate/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_label_from_rate"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/labels/shipment/:shipmentId",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/labels/create-from-shipment/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_label_from_shipment"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/labels/:label_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/get_label_by_id"]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/labels/:label_id/return",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/shipping/returns/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_return_label"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/labels/:label_id/track",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/tracking/track-by-label-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_tracking_log_from_label"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/labels/:label_id/void",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/labels/voiding/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/void_label"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/manifests",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-manifests/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_manifests"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/manifests",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/create-manifest/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_manifest"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/manifests/:manifest_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/get-manifest-by-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_manifest_by_id"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/packages",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/list_package_types"]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/packages",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/create_package_type"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/packages/:packageId",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/get-package-by-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_package_type_by_id"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/packages/:packageId",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/update-custom-package/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/update_package_type"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/packages/:packageId",
+      "prefix": "",
+      "suffix": "delete",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/delete_package_type"]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/rates",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/rates/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/calculate_rates"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/rates/bulk",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/rates/multiple-shipments/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/compare_bulk_rates"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/rates/estimate",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/rates/estimate/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/estimate_rates"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/rates/:rate_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/get_rate_by_id"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/shipments",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-shipments/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_shipments"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/shipments",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/shipping/create-a-shipment/",
+        "https://www.shipengine.com/docs/reference/create-shipments/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_shipments"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/shipments/external_shipment_id/:external_shipment_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/get_shipment_by_external_id"]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/shipments/recognize",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/parse_shipment"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/shipments/:shipmentId",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/get-shipment-by-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_shipment_by_id"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/shipments/:shipment_id",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/update-shipment/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/update_shipment"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/shipments/:shipment_id/cancel",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/cancel_shipments"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/shipments/:shipment_id/rates",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/rates/get-shipment-rates/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_shipment_rates"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/shipments/:shipment_id/tags/:tag_name",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/tag-shipment/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/tag_shipment"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/shipments/:shipment_id/tags/:tag_name",
+      "prefix": "",
+      "suffix": "delete",
+      "docsLink": [
+        "https://shipengine.github.io/shipengine-openapi/#operation/untag_shipment",
+        "https://www.shipengine.com/docs/reference/remove-tag-from-shipment/"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/tags",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-tags/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_tags"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/tags/:tag_name",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/create-tag/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_tag"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/tags/:tag_name/:new_tag_name",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/rename-tag/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/rename_tag"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/tags/:tag_name",
+      "prefix": "",
+      "suffix": "delete",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/delete-tag/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/delete_tag"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/tracking",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/tracking/",
+        "https://shipengine.github.io/shipengine-openapi/#tag/tracking"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/tracking/start",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/start-tracking/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/start_tracking"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/tracking/stop",
+      "prefix": "",
+      "suffix": "",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/stop-tracking/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/stop_tracking"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/warehouses",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-warehouses/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_warehouses"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/warehouses",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/create-warehouse/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/create_warehouse"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/warehouses/:warehouseId",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/get-warehouse-by-id/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_warehouse_by_id"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/warehouses/:warehouseId",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/update-warehouse/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/update_warehouse"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/warehouses/:warehouseId",
+      "prefix": "",
+      "suffix": "delete",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/delete-warehouse/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/delete_warehouse"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/environment/webhooks",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-webhooks/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_webhooks"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/environment/webhooks",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/create_webhook"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/environment/webhooks/:webhook_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/list-webhooks/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/get_webhook_by_id"
+      ]
+    },
+    {
+      "method": "PUT",
+      "url": "/v1/environment/webhooks/:webhook_id",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": ["https://shipengine.github.io/shipengine-openapi/#operation/update_webhook"]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/environment/webhooks/:webhook_id",
+      "prefix": "",
+      "suffix": "delete",
+      "docsLink": [
+        "https://www.shipengine.com/docs/reference/delete-webhook/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/delete_webhook"
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/v1/pickups",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/shipping/pickups"]
+    },
+    {
+      "method": "DELETE",
+      "url": "/v1/pickups/:pickup_id",
+      "prefix": "",
+      "suffix": "cancel",
+      "docsLink": ["https://www.shipengine.com/docs/shipping/pickups"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/pickups",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": ["https://www.shipengine.com/docs/shipping/pickups"]
+    },
+    {
+      "method": "GET",
+      "url": "/v1/pickups/:pickup_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/shipping/pickups"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/ltl/connections/:carrier_code",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/connect-carrier/"]
+    },
+    {
+      "method": "PUT",
+      "url": "/v-beta/ltl/connections/:carrier_code/:carrier_id",
+      "prefix": "",
+      "suffix": "put",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/connect-carrier/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/carriers",
+      "prefix": "",
+      "suffix": "list",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/list-carriers/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/carriers/:carrier_code/features",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/list-carrier-features/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/carriers/:carrier_id/documents/:pro_number",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/list-carrier-documents/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/v1/carriers/:carrier_id/options",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/list-accessorial-services/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/v1/carriers/:carrier_id/packages",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/list-container-types/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/v1/carriers/:carrier_id/services",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": [
+        "https://www.shipengine.com/docs/ltl/list-service-levels/",
+        "https://shipengine.github.io/shipengine-openapi/#operation/list_carrier_services"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/quotes/:carrier_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/quote/"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/ltl/spot-quotes/:carrier_id",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/spot-quote/"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/ltl/pickups/:carrier_id",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/pickups/"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/ltl/quotes/:quote_id/pickup",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/pickups-quote-id/"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/ltl/pickups/:pickup_id/bill_of_lading",
+      "prefix": "",
+      "suffix": "createFromPickup",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/bol-pickup-id/"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/ltl/pickups/:quote_id/bill_of_lading",
+      "prefix": "",
+      "suffix": "createFromQuote",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/bol-quote-id/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/tracking",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/tracking/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/carriers/:carrier_id",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/get-a-single-carrier/"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/labels/sales_order/:sales_order_id",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/orders/create-a-label/"]
+    },
+    {
+      "method": "POST",
+      "url": "/v-beta/tracking_page",
+      "prefix": "",
+      "suffix": "post",
+      "docsLink": ["https://www.shipengine.com/docs/tracking/create-branded-tracking-page/"]
+    },
+    {
+      "method": "GET",
+      "url": "/v-beta/ltl/v1/carriers/:carrier_code/credential_requirements",
+      "prefix": "",
+      "suffix": "get",
+      "docsLink": ["https://www.shipengine.com/docs/ltl/get-credential-requirements/"]
+    }
+  ]
+}

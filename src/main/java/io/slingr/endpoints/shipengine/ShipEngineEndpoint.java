@@ -2,37 +2,52 @@ package io.slingr.endpoints.shipengine;
 
 import io.slingr.endpoints.HttpEndpoint;
 import io.slingr.endpoints.exceptions.EndpointException;
-import io.slingr.endpoints.framework.annotations.EndpointFunction;
-import io.slingr.endpoints.framework.annotations.EndpointProperty;
-import io.slingr.endpoints.framework.annotations.SlingrEndpoint;
+import io.slingr.endpoints.framework.annotations.*;
+import io.slingr.endpoints.services.AppLogs;
+import io.slingr.endpoints.services.HttpService;
+import io.slingr.endpoints.services.rest.RestMethod;
 import io.slingr.endpoints.utils.Json;
 import io.slingr.endpoints.ws.exchange.FunctionRequest;
-import org.apache.log4j.Logger;
+import io.slingr.endpoints.ws.exchange.WebServiceRequest;
+import io.slingr.endpoints.ws.exchange.WebServiceResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>ShipEngine endpoint
  * <p>
  * <p>Created by dgaviola on 10/16/19.
+ * <p>Modified by nmarquez on 02/18/22
  */
 @SlingrEndpoint(name = "shipengine", functionPrefix = "_")
 public class ShipEngineEndpoint extends HttpEndpoint {
 
-    private final String API_URL = "https://api.shipengine.com/v1";
+    @ApplicationLogger
+    private AppLogs appLogger;
 
-    private static final Logger logger = Logger.getLogger(ShipEngineEndpoint.class);
+    private final String API_URL = "https://api.shipengine.com";
+
+    private static final Logger logger = LoggerFactory.getLogger(ShipEngineEndpoint.class);
 
     @EndpointProperty
-    private String apiToken;
+    private String apiKey;
+
+    @EndpointProperty
+    private String webhooksToken;
 
     @Override
     public String getApiUri() {
         return API_URL;
     }
 
+    @Override
+    public void endpointStarted() {
+        httpService().setupDefaultHeader("API-Key",this.apiKey);
+        httpService().setupDefaultHeader("Content-Type", "application/json");
+    }
+
     @EndpointFunction(name = "_get")
     public Json get(FunctionRequest request) {
-        logger.debug(String.format("GET [%s]", request.getJsonParams().string("path")));
-        setRequestConfig(request);
         try {
             return defaultGetRequest(request);
         } catch (EndpointException e) {
@@ -42,8 +57,6 @@ public class ShipEngineEndpoint extends HttpEndpoint {
 
     @EndpointFunction (name = "_put")
     public Json put(FunctionRequest request) {
-        logger.debug(String.format("PUT [%s]", request.getJsonParams().string("path")));
-        setRequestConfig(request);
         try {
             return defaultPutRequest(request);
         } catch (EndpointException e) {
@@ -53,8 +66,6 @@ public class ShipEngineEndpoint extends HttpEndpoint {
 
     @EndpointFunction(name = "_patch")
     public Json patch(FunctionRequest request) {
-        logger.debug(String.format("PATCH [%s]", request.getJsonParams().string("path")));
-        setRequestConfig(request);
         try {
             return defaultPatchRequest(request);
         } catch (EndpointException e) {
@@ -64,8 +75,6 @@ public class ShipEngineEndpoint extends HttpEndpoint {
 
     @EndpointFunction(name = "_post")
     public Json post(FunctionRequest request) {
-        logger.debug(String.format("POST [%s]", request.getJsonParams().string("path")));
-        setRequestConfig(request);
         try {
             return defaultPostRequest(request);
         } catch (EndpointException e) {
@@ -75,8 +84,6 @@ public class ShipEngineEndpoint extends HttpEndpoint {
 
     @EndpointFunction(name = "_delete")
     public Json delete(FunctionRequest request) {
-        logger.info(String.format("DELETE [%s]", request.getJsonParams().string("path")));
-        setRequestConfig(request);
         try {
             return defaultDeleteRequest(request);
         } catch (EndpointException e) {
@@ -84,15 +91,20 @@ public class ShipEngineEndpoint extends HttpEndpoint {
         }
     }
 
-    private void setRequestConfig(FunctionRequest request) {
-        Json body = request.getJsonParams();
-        Json headers = body.json("headers");
-        if (headers == null) {
-            headers = Json.map();
+    @EndpointWebService
+    public WebServiceResponse webhooks(WebServiceRequest request) {
+        Json webhookQueryParams = request.getParameters();
+        String webhookToken = webhookQueryParams.contains("token") ? webhookQueryParams.string("token") : "";
+
+        Json webhookBody = request.getJsonBody();
+        if (!webhookToken.isEmpty() && webhookToken.equals(this.webhooksToken)){
+            events().send(HttpService.WEBHOOK_EVENT, webhookBody);
+        } else {
+            logger.info("Webhook discarded because token was not valid",webhookBody);
+            appLogger.warn("[shipengine] Webhook discarded because token was not valid",webhookBody);
         }
-        headers.set("API-Key", apiToken);
-        headers.set("Content-Type", "application/json");
-        body.set("headers", headers);
+
+        return HttpService.defaultWebhookResponse();
     }
 
 }

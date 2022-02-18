@@ -1,50 +1,3 @@
----
-title: ShipEngine endpoint
-keywords: 
-last_updated: October 16, 2019
-tags: []
-summary: "Detailed description of the API of the ShipEngine endpoint."
----
-
-# Overview
-
-ShipEngine APIs have powered over one billion shipments for the fastest growing brands and logistics companies.
-
-The ShipEngine endpoint has the following features:
-
-- Interact with ShipEngine API
-- Shortcuts to access the REST API
-- Support for webhooks
-
-In most cases you will be using the provided shortcuts to access the API. For example, you could use the REST API
-directly by doing an HTTP request like this:
-
-```js
-var res = app.endpoints.shipengine.post('addresses/validate');
-```
-
-However you probably want to use the shortcuts:
-
-```js
-var res = app.endpoints.shipengine.addresses.validate.post({...});
-```
-
-These shortcuts are based on the [ShipEngine REST API](https://www.shipengine.com/docs/introduction/).
-You can see more information about that in the [shortcuts section](#shortcuts).
-
-# Configuration
-
-First you will need to setup an account in ShipEngine. Then you will be able to configure the endpoint you will
-need to generate an API key. You can find more information about that [here](https://www.shipengine.com/docs/getting-started/#authentication).
-
-## API key
-
-The private key can be generated in the dashboard of your ShipEngine app. Just copy the generated API secret to this field.
-
-## Webhook URL
-
-This is the URL you should configure for webhooks in ShipEngine dashboard. 
-
 # Javascript API
 
 The Javascript API of the ShipEngine endpoint has three pieces:
@@ -673,18 +626,5 @@ app.endpoints.ShipEngine.insurance.shipsurance.addFunds(body)
 
 For more information about how shortcuts work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
-## Webhook
-
-ShipEngine's webhooks allow your application to receive information to configured events occur.
-
-Please refer to the [webhooks documentation](https://www.shipengine.com/docs/tracking/webhooks/) for more information on how to configure them.
-
-# About SLINGR
-
-SLINGR is a low-code rapid application development platform that accelerates development, with robust architecture for integrations and executing custom workflows and automation.
-
-[More info about SLINGR](https://slingr.io)
-
-# License
-
-This endpoint is licensed under the Apache License 2.0. See the `LICENSE` file for more details.
+## Additional Helpers
+*MANUALLY ADD THE DOCUMENTATION OF THESE HELPERS HERE...*

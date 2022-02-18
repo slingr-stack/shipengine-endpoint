@@ -1,645 +1,999 @@
-//////////////////////////////////////////////////////////////////////////
-//                                                                      //
-//    This file is generated with shipengine/gen/gen-shipengine-helpers.js//
-//                                                                      //
-//            Wed Oct 20 2021 23:34:02 GMT-0300 (hora estándar de Argentina)                   //
-//                                                                      //
-//////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////
+//                                                                        //
+//             This file was generated with "slingr-helpgen"              //
+//                                                                        //
+//               For more info, check the following links:                //
+//             https://www.npmjs.com/package/slingr-helpgen               //
+//           https://github.com/slingr-stack/slingr-helpgen               //
+//                                                                        //
+////////////////////////////////////////////////////////////////////////////
 
 
-var urlsData = {
-	"addresses.recognize.put": {
-		"0": "addresses/recognize"
-	},
-	"addresses.validate.post": {
-		"0": "addresses/validate"
-	},
-	"shipments.post": {
-		"0": "shipments/"
-	},
-	"shipments.put": {
-		"1": "shipments/:shipmentId"
-	},
-	"shipments.get": {
-		"0": "shipments/",
-		"1": "shipments/:shipmentId"
-	},
-	"packages.put": {
-		"1": "packages/:packageId"
-	},
-	"packages.get": {
-		"1": "packages/:packageId"
-	},
-	"manifests.get": {
-		"0": "manifests/",
-		"1": "manifests/:manifestId"
-	},
-	"shipments.tags.post": {
-		"2": "shipments/:shipmentId/tags/:tagName"
-	},
-	"tags.post": {
-		"1": "tags/:tagName"
-	},
-	"tags.put": {
-		"2": "tags/:tagName/:newTagName"
-	},
-	"tags.get": {
-		"0": "tags/"
-	},
-	"shipments.tags.delete": {
-		"2": "shipments/:shipmentId/tags/:tagName"
-	},
-	"tags.delete": {
-		"1": "tags/:tagName"
-	},
-	"warehouses.post": {
-		"0": "warehouses/"
-	},
-	"warehouses.put": {
-		"1": "warehouses/:warehouseId"
-	},
-	"warehouses.get": {
-		"0": "warehouses/",
-		"1": "warehouses/:warehouseId"
-	},
-	"warehouses.delete": {
-		"1": "warehouses/:warehouseId"
-	},
-	"labels.get": {
-		"0": "labels/"
-	},
-	"labels.post": {
-		"0": "labels/"
-	},
-	"labels.rates.post": {
-		"1": "labels/rates/:rateId"
-	},
-	"labels.shipment.post": {
-		"1": "labels/shipment/:shipmentId"
-	},
-	"labels.return.post": {
-		"1": "labels/:label_id/return"
-	},
-	"labels.void.put": {
-		"1": "labels/:labelId/void"
-	},
-	"tracking.start.post": {
-		"0": "tracking/start"
-	},
-	"tracking.stop.post": {
-		"0": "tracking/stop"
-	},
-	"batches.post": {
-		"0": "batches/"
-	},
-	"batches.get": {
-		"0": "batches/",
-		"1": "batches/:batchId"
-	},
-	"batches.externalBatchId.get": {
-		"1": "batches/external_batch_id/:externalBatchId"
-	},
-	"batches.add.post": {
-		"1": "batches/:batchId/add"
-	},
-	"batches.remove.post": {
-		"1": "batches/:batchId/remove"
-	},
-	"batches.process.labels.post": {
-		"1": "batches/:batchId/process/labels"
-	},
-	"batches.errors.get": {
-		"1": "batches/:batchId/errors"
-	},
-	"batches.delete": {
-		"1": "batches/:batchId"
-	},
-	"rates.post": {
-		"0": "rates/"
-	},
-	"rates.estimate.post": {
-		"0": "rates/estimate"
-	},
-	"rates.bulk.post": {
-		"0": "rates/bulk"
-	},
-	"shipments.rates.get": {
-		"1": "shipments/:shipmentId/rates"
-	},
-	"connections.carriers.fedex.post": {
-		"0": "connections/carriers/fedex"
-	},
-	"connections.carriers.fedex.settings.put": {
-		"1": "connections/carriers/fedex/:fedexId/settings"
-	},
-	"connections.carriers.fedex.settings.get": {
-		"1": "connections/carriers/fedex/:fedexId/settings"
-	},
-	"connections.carriers.fedex.delete": {
-		"1": "connections/carriers/fedex/:fedexId"
-	},
-	"connections.carriers.ups.post": {
-		"0": "connections/carriers/ups"
-	},
-	"connections.carriers.ups.settings.put": {
-		"1": "connections/carriers/ups/:upsId/settings"
-	},
-	"connections.carriers.ups.settings.get": {
-		"1": "connections/carriers/ups/:upsId/settings"
-	},
-	"connections.carriers.ups.delete": {
-		"1": "connections/carriers/ups/:upsId"
-	},
-	"connections.carriers.stampsCom.post": {
-		"0": "connections/carriers/stamps_com"
-	},
-	"connections.carriers.stampsCom.delete": {
-		"1": "connections/carriers/stamps_com/:stampsId"
-	},
-	"connections.carriers.endicia.post": {
-		"0": "connections/carriers/endicia"
-	},
-	"connections.carriers.endicia.delete": {
-		"1": "connections/carriers/endicia/:endiciaId"
-	},
-	"carriers.get": {
-		"0": "carriers/",
-		"1": "carriers/:carrierId"
-	},
-	"carriers.services.get": {
-		"1": "carriers/:carrierId/services"
-	},
-	"carriers.options.get": {
-		"1": "carriers/:carrierId/options"
-	},
-	"carriers.packages.get": {
-		"1": "carriers/:carrierId/packages"
-	}
-};
-
-var analyzeParams = function (args) {
-    var paramsSize = 0;
-    var params = [];
-    var argumentsObj = null;
-    for (var i = 0; i < args.length; i++) {
-        if (typeof args[i] != 'object') {
-            paramsSize++;
-            params.push(args[i]);
+function parse(str) {
+    try {
+        if (arguments.length > 1) {
+            var args = arguments[1], i = 0;
+            return str.replace(/(:(?:\w|-)+)/g, () => {
+                if (typeof (args[i]) != 'string') throw new Error('Invalid type of argument: [' + args[i] + '] for url [' + str + '].');
+                return args[i++];
+            });
         } else {
-            argumentsObj = args[i];
+            if (str) {
+                return str;
+            }
+            throw new Error('No arguments nor url were received when calling the helper. Please check it\'s definition.');
         }
-
+    } catch (err) {
+        sys.logs.error('Some unexpected error happened during the parse of the url for this helper.')
+        throw err;
     }
-    return {
-        paramsSize: paramsSize,
-        argumentsObj: argumentsObj,
-        params: params
-    };
-};
-
-var getUrl = function (url, params, args, argsToPath) {
-
-    if (!url) {
-        return null;
-    }
-
-    if (params.length > 0) {
-        var i = 0;
-        url = url.replace(/:(\w+)/g, function () {
-            return params[i++];
-        });
-    }
-
-    if (args && argsToPath) {
-        var tmp = Object.keys(args).map(function (k) {
-            return encodeURIComponent(k) + '=' + args[k];
-        }).join('&');
-
-        if (url.split("\?").length > 1) {
-            url += '&' + tmp;
-        } else {
-            url += '?' + tmp;
-        }
-    }
-
-    return url;
-};
+}
 
 endpoint.addresses = {};
-endpoint.addresses.recognize = {};
-endpoint.addresses.recognize.put = function() {
-	var obj = urlsData['addresses.recognize.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
+
+endpoint.addresses.recognize = function(httpOptions) {
+	var url = parse('/v1/addresses/recognize');
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
 };
 
-endpoint.addresses.validate = {};
-endpoint.addresses.validate.post = function() {
-	var obj = urlsData['addresses.validate.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.shipments = {};
-endpoint.shipments.post = function() {
-	var obj = urlsData['shipments.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.shipments.put = function() {
-	var obj = urlsData['shipments.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
-};
-
-endpoint.shipments.get = function() {
-	var obj = urlsData['shipments.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
-};
-
-endpoint.packages = {};
-endpoint.packages.put = function() {
-	var obj = urlsData['packages.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
-};
-
-endpoint.packages.get = function() {
-	var obj = urlsData['packages.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
-};
-
-endpoint.manifests = {};
-endpoint.manifests.get = function() {
-	var obj = urlsData['manifests.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
-};
-
-endpoint.shipments.tags = {};
-endpoint.shipments.tags.post = function() {
-	var obj = urlsData['shipments.tags.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.tags = {};
-endpoint.tags.post = function() {
-	var obj = urlsData['tags.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.tags.put = function() {
-	var obj = urlsData['tags.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
-};
-
-endpoint.tags.get = function() {
-	var obj = urlsData['tags.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
-};
-
-endpoint.shipments.tags.delete = function() {
-	var obj = urlsData['shipments.tags.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
-};
-
-endpoint.tags.delete = function() {
-	var obj = urlsData['tags.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
-};
-
-endpoint.warehouses = {};
-endpoint.warehouses.post = function() {
-	var obj = urlsData['warehouses.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.warehouses.put = function() {
-	var obj = urlsData['warehouses.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
-};
-
-endpoint.warehouses.get = function() {
-	var obj = urlsData['warehouses.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
-};
-
-endpoint.warehouses.delete = function() {
-	var obj = urlsData['warehouses.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
-};
-
-endpoint.labels = {};
-endpoint.labels.get = function() {
-	var obj = urlsData['labels.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
-};
-
-endpoint.labels.post = function() {
-	var obj = urlsData['labels.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.labels.rates = {};
-endpoint.labels.rates.post = function() {
-	var obj = urlsData['labels.rates.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.labels.shipment = {};
-endpoint.labels.shipment.post = function() {
-	var obj = urlsData['labels.shipment.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.labels.return = {};
-endpoint.labels.return.post = function() {
-	var obj = urlsData['labels.return.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.labels.void = {};
-endpoint.labels.void.put = function() {
-	var obj = urlsData['labels.void.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
-};
-
-endpoint.tracking = {};
-endpoint.tracking.start = {};
-endpoint.tracking.start.post = function() {
-	var obj = urlsData['tracking.start.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.post(url);
-};
-
-endpoint.tracking.stop = {};
-endpoint.tracking.stop.post = function() {
-	var obj = urlsData['tracking.stop.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.post(url);
+endpoint.addresses.validate = function(httpOptions) {
+	var url = parse('/v1/addresses/validate');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
 };
 
 endpoint.batches = {};
-endpoint.batches.post = function() {
-	var obj = urlsData['batches.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
+
+endpoint.batches.list = function(httpOptions) {
+	var url = parse('/v1/batches');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 
-endpoint.batches.get = function() {
-	var obj = urlsData['batches.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+endpoint.batches.post = function(httpOptions) {
+	var url = parse('/v1/batches');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
 };
 
 endpoint.batches.externalBatchId = {};
-endpoint.batches.externalBatchId.get = function() {
-	var obj = urlsData['batches.externalBatchId.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+
+endpoint.batches.externalBatchId.get = function(externalBatchId, httpOptions) {
+	if (!externalBatchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [externalBatchId].');
+		return;
+	}
+	var url = parse('/v1/batches/external_batch_id/:external_batch_id', [externalBatchId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 
-endpoint.batches.add = {};
-endpoint.batches.add.post = function() {
-	var obj = urlsData['batches.add.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
+endpoint.batches.delete = function(batchId, httpOptions) {
+	if (!batchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [batchId].');
+		return;
+	}
+	var url = parse('/v1/batches/:batch_id', [batchId]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
 };
 
-endpoint.batches.remove = {};
-endpoint.batches.remove.post = function() {
-	var obj = urlsData['batches.remove.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
+endpoint.batches.get = function(batchId, httpOptions) {
+	if (!batchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [batchId].');
+		return;
+	}
+	var url = parse('/v1/batches/:batch_id', [batchId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 
-endpoint.batches.process = {};
-endpoint.batches.process.labels = {};
-endpoint.batches.process.labels.post = function() {
-	var obj = urlsData['batches.process.labels.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
+endpoint.batches.put = function(batchId, httpOptions) {
+	if (!batchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [batchId].');
+		return;
+	}
+	var url = parse('/v1/batches/:batch_id', [batchId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.batches.add = function(batchId, httpOptions) {
+	if (!batchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [batchId].');
+		return;
+	}
+	var url = parse('/v1/batches/:batch_id/add', [batchId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
 };
 
 endpoint.batches.errors = {};
-endpoint.batches.errors.get = function() {
-	var obj = urlsData['batches.errors.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+
+endpoint.batches.errors.list = function(batchId, httpOptions) {
+	if (!batchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [batchId].');
+		return;
+	}
+	var url = parse('/v1/batches/:batch_id/errors', [batchId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 
-endpoint.batches.delete = function() {
-	var obj = urlsData['batches.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
+endpoint.batches.process = {};
+
+endpoint.batches.process.labels = function(batchId, httpOptions) {
+	if (!batchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [batchId].');
+		return;
+	}
+	var url = parse('/v1/batches/:batch_id/process/labels', [batchId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
 };
 
-endpoint.rates = {};
-endpoint.rates.post = function() {
-	var obj = urlsData['rates.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.rates.estimate = {};
-endpoint.rates.estimate.post = function() {
-	var obj = urlsData['rates.estimate.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.rates.bulk = {};
-endpoint.rates.bulk.post = function() {
-	var obj = urlsData['rates.bulk.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.shipments.rates = {};
-endpoint.shipments.rates.get = function() {
-	var obj = urlsData['shipments.rates.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+endpoint.batches.remove = function(batchId, httpOptions) {
+	if (!batchId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [batchId].');
+		return;
+	}
+	var url = parse('/v1/batches/:batch_id/remove', [batchId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
 };
 
 endpoint.connections = {};
+
 endpoint.connections.carriers = {};
-endpoint.connections.carriers.fedex = {};
-endpoint.connections.carriers.fedex.post = function() {
-	var obj = urlsData['connections.carriers.fedex.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
+
+endpoint.connections.carriers.post = function(carrierName, httpOptions) {
+	if (!carrierName) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierName].');
+		return;
+	}
+	var url = parse('/v1/connections/carriers/:carrier_name', [carrierName]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
 };
 
-endpoint.connections.carriers.fedex.settings = {};
-endpoint.connections.carriers.fedex.settings.put = function() {
-	var obj = urlsData['connections.carriers.fedex.settings.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
+endpoint.connections.carriers.delete = function(carrierName, id, httpOptions) {
+	if (!carrierName || !id) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierName,id].');
+		return;
+	}
+	var url = parse('/v1/connections/carriers/:carrier_name/:id', [carrierName, id]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
 };
 
-endpoint.connections.carriers.fedex.settings.get = function() {
-	var obj = urlsData['connections.carriers.fedex.settings.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+endpoint.connections.carriers.settings = {};
+
+endpoint.connections.carriers.settings.get = function(carrierName, id, httpOptions) {
+	if (!carrierName || !id) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierName,id].');
+		return;
+	}
+	var url = parse('/v1/connections/carriers/:carrier_name/:id/settings', [carrierName, id]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 
-endpoint.connections.carriers.fedex.delete = function() {
-	var obj = urlsData['connections.carriers.fedex.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
+endpoint.connections.carriers.settings.put = function(carrierName, id, httpOptions) {
+	if (!carrierName || !id) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierName,id].');
+		return;
+	}
+	var url = parse('/v1/connections/carriers/:carrier_name/:id/settings', [carrierName, id]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
 };
 
-endpoint.connections.carriers.ups = {};
-endpoint.connections.carriers.ups.post = function() {
-	var obj = urlsData['connections.carriers.ups.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.connections.carriers.ups.settings = {};
-endpoint.connections.carriers.ups.settings.put = function() {
-	var obj = urlsData['connections.carriers.ups.settings.put'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.put(url, params.argumentsObj);
-};
-
-endpoint.connections.carriers.ups.settings.get = function() {
-	var obj = urlsData['connections.carriers.ups.settings.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
-};
-
-endpoint.connections.carriers.ups.delete = function() {
-	var obj = urlsData['connections.carriers.ups.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
-};
-
-endpoint.connections.carriers.stampsCom = {};
-endpoint.connections.carriers.stampsCom.post = function() {
-	var obj = urlsData['connections.carriers.stampsCom.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.connections.carriers.stampsCom.delete = function() {
-	var obj = urlsData['connections.carriers.stampsCom.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
-};
-
-endpoint.connections.carriers.endicia = {};
-endpoint.connections.carriers.endicia.post = function() {
-	var obj = urlsData['connections.carriers.endicia.post'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, false);
-	return endpoint.post(url, params.argumentsObj);
-};
-
-endpoint.connections.carriers.endicia.delete = function() {
-	var obj = urlsData['connections.carriers.endicia.delete'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.delete(url);
+endpoint.connections.carriers.put = function(carrierName, carrierId, httpOptions) {
+	if (!carrierName || !carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierName,carrierId].');
+		return;
+	}
+	var url = parse('/v1/connections/carriers/:carrier_name/:carrier_id', [carrierName, carrierId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
 };
 
 endpoint.carriers = {};
-endpoint.carriers.get = function() {
-	var obj = urlsData['carriers.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+
+endpoint.carriers.list = function(httpOptions) {
+	var url = parse('/v1/carriers');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 
-endpoint.carriers.services = {};
-endpoint.carriers.services.get = function() {
-	var obj = urlsData['carriers.services.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+endpoint.carriers.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v1/carriers/:carrier_id', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.carriers.addFunds = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v1/carriers/:carrier_id/add_funds', [carrierId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
 };
 
 endpoint.carriers.options = {};
-endpoint.carriers.options.get = function() {
-	var obj = urlsData['carriers.options.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+
+endpoint.carriers.options.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v1/carriers/:carrier_id/options', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 
 endpoint.carriers.packages = {};
-endpoint.carriers.packages.get = function() {
-	var obj = urlsData['carriers.packages.get'];
-	var params = analyzeParams(arguments);
-	var url = getUrl(obj[params.paramsSize], params.params, params.argumentsObj, true);
-	return endpoint.get(url);
+
+endpoint.carriers.packages.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v1/carriers/:carrier_id/packages', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.carriers.services = {};
+
+endpoint.carriers.services.list = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v1/carriers/:carrier_id/services', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.downloads = {};
+
+endpoint.downloads.get = function(dir, subdir, filename, httpOptions) {
+	if (!dir || !subdir || !filename) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [dir,subdir,filename].');
+		return;
+	}
+	var url = parse('/v1/downloads/:dir/:subdir/:filename', [dir, subdir, filename]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.connections.insurance = {};
+
+endpoint.connections.insurance.shipsurance = {};
+
+endpoint.connections.insurance.shipsurance.disconnect = function(httpOptions) {
+	var url = parse('/v1/connections/insurance/shipsurance');
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
+};
+
+endpoint.connections.insurance.shipsurance.connect = function(httpOptions) {
+	var url = parse('/v1/connections/insurance/shipsurance');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.insurance = {};
+
+endpoint.insurance.shipsurance = {};
+
+endpoint.insurance.shipsurance.addFunds = function(httpOptions) {
+	var url = parse('/v1/insurance/shipsurance/add_funds');
+	sys.logs.debug('[ShipEngine] PATCH from: ' + url);
+	return endpoint.patch(url, httpOptions);
+};
+
+endpoint.insurance.shipsurance.balance = {};
+
+endpoint.insurance.shipsurance.balance.get = function(httpOptions) {
+	var url = parse('/v1/insurance/shipsurance/balance');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.labels = {};
+
+endpoint.labels.list = function(httpOptions) {
+	var url = parse('/v1/labels');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.labels.post = function(httpOptions) {
+	var url = parse('/v1/labels');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.labels.externalShipmentId = {};
+
+endpoint.labels.externalShipmentId.get = function(externalShipmentId, httpOptions) {
+	if (!externalShipmentId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [externalShipmentId].');
+		return;
+	}
+	var url = parse('/v1/labels/external_shipment_id/:external_shipment_id', [externalShipmentId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.labels.rates = function(rateId, httpOptions) {
+	if (!rateId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [rateId].');
+		return;
+	}
+	var url = parse('/v1/labels/rates/:rateId', [rateId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.labels.shipment = {};
+
+endpoint.labels.shipment.post = function(shipmentId, httpOptions) {
+	if (!shipmentId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [shipmentId].');
+		return;
+	}
+	var url = parse('/v1/labels/shipment/:shipmentId', [shipmentId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.labels.get = function(labelId, httpOptions) {
+	if (!labelId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [labelId].');
+		return;
+	}
+	var url = parse('/v1/labels/:label_id', [labelId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.labels.return = {};
+
+endpoint.labels.return.post = function(labelId, httpOptions) {
+	if (!labelId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [labelId].');
+		return;
+	}
+	var url = parse('/v1/labels/:label_id/return', [labelId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.labels.track = function(labelId, httpOptions) {
+	if (!labelId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [labelId].');
+		return;
+	}
+	var url = parse('/v1/labels/:label_id/track', [labelId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.labels.void = function(labelId, httpOptions) {
+	if (!labelId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [labelId].');
+		return;
+	}
+	var url = parse('/v1/labels/:label_id/void', [labelId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.manifests = {};
+
+endpoint.manifests.list = function(httpOptions) {
+	var url = parse('/v1/manifests');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.manifests.post = function(httpOptions) {
+	var url = parse('/v1/manifests');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.manifests.get = function(manifestId, httpOptions) {
+	if (!manifestId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [manifestId].');
+		return;
+	}
+	var url = parse('/v1/manifests/:manifest_id', [manifestId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.packages = {};
+
+endpoint.packages.list = function(httpOptions) {
+	var url = parse('/v1/packages');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.packages.post = function(httpOptions) {
+	var url = parse('/v1/packages');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.packages.get = function(packageId, httpOptions) {
+	if (!packageId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [packageId].');
+		return;
+	}
+	var url = parse('/v1/packages/:packageId', [packageId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.packages.put = function(packageId, httpOptions) {
+	if (!packageId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [packageId].');
+		return;
+	}
+	var url = parse('/v1/packages/:packageId', [packageId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.packages.delete = function(packageId, httpOptions) {
+	if (!packageId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [packageId].');
+		return;
+	}
+	var url = parse('/v1/packages/:packageId', [packageId]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
+};
+
+endpoint.rates = {};
+
+endpoint.rates.post = function(httpOptions) {
+	var url = parse('/v1/rates');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.rates.bulk = {};
+
+endpoint.rates.bulk.post = function(httpOptions) {
+	var url = parse('/v1/rates/bulk');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.rates.estimate = function(httpOptions) {
+	var url = parse('/v1/rates/estimate');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.rates.get = function(rateId, httpOptions) {
+	if (!rateId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [rateId].');
+		return;
+	}
+	var url = parse('/v1/rates/:rate_id', [rateId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.shipments = {};
+
+endpoint.shipments.list = function(httpOptions) {
+	var url = parse('/v1/shipments');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.shipments.post = function(httpOptions) {
+	var url = parse('/v1/shipments');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.shipments.externalShipmentId = {};
+
+endpoint.shipments.externalShipmentId.get = function(externalShipmentId, httpOptions) {
+	if (!externalShipmentId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [externalShipmentId].');
+		return;
+	}
+	var url = parse('/v1/shipments/external_shipment_id/:external_shipment_id', [externalShipmentId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.shipments.recognize = {};
+
+endpoint.shipments.recognize.put = function(httpOptions) {
+	var url = parse('/v1/shipments/recognize');
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.shipments.get = function(shipmentId, httpOptions) {
+	if (!shipmentId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [shipmentId].');
+		return;
+	}
+	var url = parse('/v1/shipments/:shipmentId', [shipmentId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.shipments.put = function(shipmentId, httpOptions) {
+	if (!shipmentId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [shipmentId].');
+		return;
+	}
+	var url = parse('/v1/shipments/:shipment_id', [shipmentId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.shipments.cancel = {};
+
+endpoint.shipments.cancel.put = function(shipmentId, httpOptions) {
+	if (!shipmentId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [shipmentId].');
+		return;
+	}
+	var url = parse('/v1/shipments/:shipment_id/cancel', [shipmentId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.shipments.rates = {};
+
+endpoint.shipments.rates.get = function(shipmentId, httpOptions) {
+	if (!shipmentId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [shipmentId].');
+		return;
+	}
+	var url = parse('/v1/shipments/:shipment_id/rates', [shipmentId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.shipments.tags = {};
+
+endpoint.shipments.tags.post = function(shipmentId, tagName, httpOptions) {
+	if (!shipmentId || !tagName) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [shipmentId,tagName].');
+		return;
+	}
+	var url = parse('/v1/shipments/:shipment_id/tags/:tag_name', [shipmentId, tagName]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.shipments.tags.delete = function(shipmentId, tagName, httpOptions) {
+	if (!shipmentId || !tagName) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [shipmentId,tagName].');
+		return;
+	}
+	var url = parse('/v1/shipments/:shipment_id/tags/:tag_name', [shipmentId, tagName]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
+};
+
+endpoint.tags = {};
+
+endpoint.tags.list = function(httpOptions) {
+	var url = parse('/v1/tags');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.tags.post = function(tagName, httpOptions) {
+	if (!tagName) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [tagName].');
+		return;
+	}
+	var url = parse('/v1/tags/:tag_name', [tagName]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.tags.put = function(tagName, newTagName, httpOptions) {
+	if (!tagName || !newTagName) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [tagName,newTagName].');
+		return;
+	}
+	var url = parse('/v1/tags/:tag_name/:new_tag_name', [tagName, newTagName]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.tags.delete = function(tagName, httpOptions) {
+	if (!tagName) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [tagName].');
+		return;
+	}
+	var url = parse('/v1/tags/:tag_name', [tagName]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
+};
+
+endpoint.tracking = {};
+
+endpoint.tracking.get = function(httpOptions) {
+	var url = parse('/v1/tracking');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.tracking.start = function(httpOptions) {
+	var url = parse('/v1/tracking/start');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.tracking.stop = function(httpOptions) {
+	var url = parse('/v1/tracking/stop');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.warehouses = {};
+
+endpoint.warehouses.list = function(httpOptions) {
+	var url = parse('/v1/warehouses');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.warehouses.post = function(httpOptions) {
+	var url = parse('/v1/warehouses');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.warehouses.get = function(warehouseId, httpOptions) {
+	if (!warehouseId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [warehouseId].');
+		return;
+	}
+	var url = parse('/v1/warehouses/:warehouseId', [warehouseId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.warehouses.put = function(warehouseId, httpOptions) {
+	if (!warehouseId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [warehouseId].');
+		return;
+	}
+	var url = parse('/v1/warehouses/:warehouseId', [warehouseId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.warehouses.delete = function(warehouseId, httpOptions) {
+	if (!warehouseId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [warehouseId].');
+		return;
+	}
+	var url = parse('/v1/warehouses/:warehouseId', [warehouseId]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
+};
+
+endpoint.environment = {};
+
+endpoint.environment.webhooks = {};
+
+endpoint.environment.webhooks.list = function(httpOptions) {
+	var url = parse('/v1/environment/webhooks');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.environment.webhooks.post = function(httpOptions) {
+	var url = parse('/v1/environment/webhooks');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.environment.webhooks.get = function(webhookId, httpOptions) {
+	if (!webhookId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [webhookId].');
+		return;
+	}
+	var url = parse('/v1/environment/webhooks/:webhook_id', [webhookId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.environment.webhooks.put = function(webhookId, httpOptions) {
+	if (!webhookId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [webhookId].');
+		return;
+	}
+	var url = parse('/v1/environment/webhooks/:webhook_id', [webhookId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.environment.webhooks.delete = function(webhookId, httpOptions) {
+	if (!webhookId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [webhookId].');
+		return;
+	}
+	var url = parse('/v1/environment/webhooks/:webhook_id', [webhookId]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
+};
+
+endpoint.pickups = {};
+
+endpoint.pickups.post = function(httpOptions) {
+	var url = parse('/v1/pickups');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.pickups.cancel = function(pickupId, httpOptions) {
+	if (!pickupId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [pickupId].');
+		return;
+	}
+	var url = parse('/v1/pickups/:pickup_id', [pickupId]);
+	sys.logs.debug('[ShipEngine] DELETE from: ' + url);
+	return endpoint.delete(url, httpOptions);
+};
+
+endpoint.pickups.list = function(httpOptions) {
+	var url = parse('/v1/pickups');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.pickups.get = function(pickupId, httpOptions) {
+	if (!pickupId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [pickupId].');
+		return;
+	}
+	var url = parse('/v1/pickups/:pickup_id', [pickupId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta = {};
+
+endpoint.beta.ltl = {};
+
+endpoint.beta.ltl.connections = {};
+
+endpoint.beta.ltl.connections.post = function(carrierCode, httpOptions) {
+	if (!carrierCode) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierCode].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/connections/:carrier_code', [carrierCode]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.ltl.connections.put = function(carrierCode, carrierId, httpOptions) {
+	if (!carrierCode || !carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierCode,carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/connections/:carrier_code/:carrier_id', [carrierCode, carrierId]);
+	sys.logs.debug('[ShipEngine] PUT from: ' + url);
+	return endpoint.put(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers = {};
+
+endpoint.beta.ltl.carriers.list = function(httpOptions) {
+	var url = parse('/v-beta/ltl/carriers');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers.features = {};
+
+endpoint.beta.ltl.carriers.features.get = function(carrierCode, httpOptions) {
+	if (!carrierCode) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierCode].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/carriers/:carrier_code/features', [carrierCode]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers.documents = {};
+
+endpoint.beta.ltl.carriers.documents.get = function(carrierId, proNumber, httpOptions) {
+	if (!carrierId || !proNumber) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId,proNumber].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/carriers/:carrier_id/documents/:pro_number', [carrierId, proNumber]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers.options = {};
+
+endpoint.beta.ltl.carriers.options.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/v1/carriers/:carrier_id/options', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers.packages = {};
+
+endpoint.beta.ltl.carriers.packages.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/v1/carriers/:carrier_id/packages', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers.services = {};
+
+endpoint.beta.ltl.carriers.services.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/v1/carriers/:carrier_id/services', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.quotes = {};
+
+endpoint.beta.ltl.quotes.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/quotes/:carrier_id', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.spotQuotes = {};
+
+endpoint.beta.ltl.spotQuotes.post = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/spot-quotes/:carrier_id', [carrierId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.ltl.pickups = {};
+
+endpoint.beta.ltl.pickups.post = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/pickups/:carrier_id', [carrierId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.ltl.quotes.pickup = {};
+
+endpoint.beta.ltl.quotes.pickup.post = function(quoteId, httpOptions) {
+	if (!quoteId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [quoteId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/quotes/:quote_id/pickup', [quoteId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.ltl.pickups.billOfLading = {};
+
+endpoint.beta.ltl.pickups.billOfLading.createFromPickup = function(pickupId, httpOptions) {
+	if (!pickupId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [pickupId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/pickups/:pickup_id/bill_of_lading', [pickupId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.ltl.pickups.billOfLading.createFromQuote = function(quoteId, httpOptions) {
+	if (!quoteId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [quoteId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/pickups/:quote_id/bill_of_lading', [quoteId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.ltl.tracking = {};
+
+endpoint.beta.ltl.tracking.get = function(httpOptions) {
+	var url = parse('/v-beta/ltl/tracking');
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers.get = function(carrierId, httpOptions) {
+	if (!carrierId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierId].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/carriers/:carrier_id', [carrierId]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
+};
+
+endpoint.beta.labels = {};
+
+endpoint.beta.labels.salesOrder = {};
+
+endpoint.beta.labels.salesOrder.post = function(salesOrderId, httpOptions) {
+	if (!salesOrderId) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [salesOrderId].');
+		return;
+	}
+	var url = parse('/v-beta/labels/sales_order/:sales_order_id', [salesOrderId]);
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.trackingPage = {};
+
+endpoint.beta.trackingPage.post = function(httpOptions) {
+	var url = parse('/v-beta/tracking_page');
+	sys.logs.debug('[ShipEngine] POST from: ' + url);
+	return endpoint.post(url, httpOptions);
+};
+
+endpoint.beta.ltl.carriers.credentialRequirements = {};
+
+endpoint.beta.ltl.carriers.credentialRequirements.get = function(carrierCode, httpOptions) {
+	if (!carrierCode) {
+		sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [carrierCode].');
+		return;
+	}
+	var url = parse('/v-beta/ltl/v1/carriers/:carrier_code/credential_requirements', [carrierCode]);
+	sys.logs.debug('[ShipEngine] GET from: ' + url);
+	return endpoint.get(url, httpOptions);
 };
 

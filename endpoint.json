@@ -49,14 +49,15 @@
     }
   ],
   "scripts": [
-    "shipengine-helpers.js",
-    "functions.js"
+    "functions.js",
+    "http-generic-helpers.js",
+    "shipengine-helpers.js"
   ],
   "listeners": [],
   "configuration": [
     {
-      "label": "API Token",
-      "name": "apiToken",
+      "label": "API Key",
+      "name": "apiKey",
       "type": "text",
       "required": true
     },
@@ -65,6 +66,11 @@
       "label": "Webhook URL",
       "type": "label",
       "value": "@config.WEBHOOK_URL"
+    },
+    {
+      "label": "Webhooks Token",
+      "name": "webhooksToken",
+      "type": "text"
     }
   ]
 }
