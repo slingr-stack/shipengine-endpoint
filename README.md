@@ -1,7 +1,7 @@
 ---
 title: ShipEngine endpoint
 keywords: 
-last_updated: October 16, 2019
+last_updated: February 21, 2022
 tags: []
 summary: "Detailed description of the API of the ShipEngine endpoint."
 ---
@@ -51,7 +51,6 @@ The Javascript API of the ShipEngine endpoint has three pieces:
 
 - **HTTP requests**: These allows to make regular HTTP requests.
 - **Shortcuts**: These are helpers to make HTTP request to the API in a more convenient way.
-- **Additional Helpers**: These helpers provide additional features that facilitate or improves the endpoint usage in SLINGR.
 
 ## HTTP requests
 You can make `PUT`,`POST`,`GET`,`DELETE`,`PATCH` requests to the [ShipEngine API](https://www.shipengine.com/docs/getting-started/) like this:
@@ -833,7 +832,7 @@ app.endpoints.ShipEngine.insurance.shipsurance.addFunds(body)
 
 For more information about how shortcuts work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
-#Events
+# Events
 
 ## Webhook
 
