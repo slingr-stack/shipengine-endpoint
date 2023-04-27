@@ -610,8 +610,195 @@ For more information about how shortcuts or flow steps works, and how they are g
 
 Description of Custom Flow Steps
 
-*MANUALLY ADD THE DOCUMENTATION OF THESE FLOW STEPS HERE...*
+### Start Tracking Updates
 
+This step allows you to subscribe to tracking updates for a package.
+
+
+<h3>Inputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Visibility</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Carrier Code</td>
+        <td>DropDown</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Supported Carriers.
+        </td>
+    </tr>
+    <tr>
+        <td>Tracking Number</td>
+        <td>Test</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            A unique identification code assigned to a package.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Outputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>response</td>
+        <td>object</td>
+        <td>
+            Object resulting from the response to the endpoint call.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+### Stop Tracking Updates
+
+This step allows you to unsubscribe to tracking updates for a package.
+
+
+<h3>Inputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Visibility</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Carrier Code</td>
+        <td>DropDown</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Supported Carriers.
+        </td>
+    </tr>
+    <tr>
+        <td>Tracking Number</td>
+        <td>Test</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            A unique identification code assigned to a package.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Outputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>response</td>
+        <td>object</td>
+        <td>
+            Object resulting from the response to the endpoint call.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+### Tracking Information
+
+Get information about tracking
+
+
+<h3>Inputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Visibility</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Carrier Code</td>
+        <td>DropDown</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Supported Carriers.
+        </td>
+    </tr>
+    <tr>
+        <td>Tracking Number</td>
+        <td>Test</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            A unique identification code assigned to a package.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Outputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>response</td>
+        <td>object</td>
+        <td>
+            Object resulting from the response to the endpoint call.
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 </details>
 

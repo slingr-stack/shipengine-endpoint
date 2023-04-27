@@ -1,4 +1,3 @@
-step = {};
 step.trackingShipEngine = function (inputs) {
 	var inputsLogic = {
 		params:{
@@ -12,7 +11,5 @@ step.trackingShipEngine = function (inputs) {
 		params: inputsLogic.params,
 	}
 
-	return JSON.stringify(options);
-
-	// return endpoint._get(options);
+	return endpoint._get(options);
 }
