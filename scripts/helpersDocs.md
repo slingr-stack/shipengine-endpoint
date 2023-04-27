@@ -1,20 +1,20 @@
 # Javascript API
 
-The Javascript API of the mailchimp endpoint has three pieces:
+The Javascript API of the ShipEngine endpoint has three pieces:
 
 - **HTTP requests**: These allow to make regular HTTP requests.
 - **Shortcuts**: These are helpers to make HTTP request to the API in a more convenient way.
 - **Additional Helpers**: These helpers provide additional features that facilitate or improves the endpoint usage in SLINGR.
 
 ## HTTP requests
-You can make `POST`,`GET`,`DELETE`,`PUT` requests to the [mailchimp API](API_URL_HERE) like this:
+You can make `POST`,`GET`,`DELETE`,`PUT` requests to the [ShipEngine API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.mailchimp.post('/tags/:tagName', body)
-var response = app.endpoints.mailchimp.post('/tags/:tagName')
-var response = app.endpoints.mailchimp.get('/manifests')
-var response = app.endpoints.mailchimp.delete('/connections/carriers/endicia/:endiciaId')
-var response = app.endpoints.mailchimp.put('/connections/carriers/ups/:upsId/settings', body)
-var response = app.endpoints.mailchimp.put('/connections/carriers/ups/:upsId/settings')
+var response = app.endpoints.ShipEngine.post('/connections/carriers/ups', body)
+var response = app.endpoints.ShipEngine.post('/connections/carriers/ups')
+var response = app.endpoints.ShipEngine.get('/carriers/:carrierId/services')
+var response = app.endpoints.ShipEngine.delete('/shipments/:shipmentId/tags/:tagName')
+var response = app.endpoints.ShipEngine.put('/packages/:packageId', body)
+var response = app.endpoints.ShipEngine.put('/packages/:packageId')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
@@ -31,367 +31,367 @@ Instead of having to use the generic HTTP methods, you can (and should) make use
 * API URL: '/addresses/validate'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.addresses.validate.post(body)
+app.endpoints.ShipEngine.addresses.validate.post(body)
 ```
 ---
 * API URL: '/shipments'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.shipments.post(body)
+app.endpoints.ShipEngine.shipments.post(body)
 ```
 ---
 * API URL: '/shipments/:shipmentId/tags/:tagName'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.shipments.tags.post(shipmentId, tagName, body)
+app.endpoints.ShipEngine.shipments.tags.post(shipmentId, tagName, body)
 ```
 ---
 * API URL: '/tags/:tagName'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.tags.post(tagName, body)
+app.endpoints.ShipEngine.tags.post(tagName, body)
 ```
 ---
 * API URL: '/warehouses'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.warehouses.post(body)
+app.endpoints.ShipEngine.warehouses.post(body)
 ```
 ---
 * API URL: '/labels'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.labels.post(body)
+app.endpoints.ShipEngine.labels.post(body)
 ```
 ---
 * API URL: '/labels/rates/:rateId'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.labels.rates.post(rateId, body)
+app.endpoints.ShipEngine.labels.rates.post(rateId, body)
 ```
 ---
 * API URL: '/labels/shipment/:shipmentId'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.labels.shipment.post(shipmentId, body)
+app.endpoints.ShipEngine.labels.shipment.post(shipmentId, body)
 ```
 ---
 * API URL: '/labels/:label_id/return'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.labels.return.post(labelId, body)
+app.endpoints.ShipEngine.labels.return.post(labelId, body)
 ```
 ---
 * API URL: '/tracking/start'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.tracking.start.post(body)
+app.endpoints.ShipEngine.tracking.start.post(body)
 ```
 ---
 * API URL: '/tracking/stop'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.tracking.stop.post(body)
+app.endpoints.ShipEngine.tracking.stop.post(body)
 ```
 ---
 * API URL: '/batches'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.batches.post(body)
+app.endpoints.ShipEngine.batches.post(body)
 ```
 ---
 * API URL: '/batches/:batchId/add'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.batches.add.post(batchId, body)
+app.endpoints.ShipEngine.batches.add.post(batchId, body)
 ```
 ---
 * API URL: '/batches/:batchId/remove'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.batches.remove.post(batchId, body)
+app.endpoints.ShipEngine.batches.remove.post(batchId, body)
 ```
 ---
 * API URL: '/batches/:batchId/process/labels'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.batches.process.labels.post(batchId, body)
+app.endpoints.ShipEngine.batches.process.labels.post(batchId, body)
 ```
 ---
 * API URL: '/rates'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.rates.post(body)
+app.endpoints.ShipEngine.rates.post(body)
 ```
 ---
 * API URL: '/rates/estimate'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.rates.estimate.post(body)
+app.endpoints.ShipEngine.rates.estimate.post(body)
 ```
 ---
 * API URL: '/rates/bulk'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.rates.bulk.post(body)
+app.endpoints.ShipEngine.rates.bulk.post(body)
 ```
 ---
 * API URL: '/connections/carriers/fedex'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.fedex.post(body)
+app.endpoints.ShipEngine.connections.carriers.fedex.post(body)
 ```
 ---
 * API URL: '/connections/carriers/ups'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.ups.post(body)
+app.endpoints.ShipEngine.connections.carriers.ups.post(body)
 ```
 ---
 * API URL: '/connections/carriers/stamps_com'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.stampsCom.post(body)
+app.endpoints.ShipEngine.connections.carriers.stampsCom.post(body)
 ```
 ---
 * API URL: '/connections/carriers/endicia'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.endicia.post(body)
+app.endpoints.ShipEngine.connections.carriers.endicia.post(body)
 ```
 ---
 * API URL: '/shipments'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.shipments.get()
+app.endpoints.ShipEngine.shipments.get()
 ```
 ---
 * API URL: '/shipments/:shipmentId'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.shipments.get()
+app.endpoints.ShipEngine.shipments.get()
 ```
 ---
 * API URL: '/packages/:packageId'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.packages.get(packageId)
+app.endpoints.ShipEngine.packages.get(packageId)
 ```
 ---
 * API URL: '/manifests/:manifestId'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.manifests.get()
+app.endpoints.ShipEngine.manifests.get()
 ```
 ---
 * API URL: '/manifests'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.manifests.get()
+app.endpoints.ShipEngine.manifests.get()
 ```
 ---
 * API URL: '/tags'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.tags.get()
+app.endpoints.ShipEngine.tags.get()
 ```
 ---
 * API URL: '/warehouses/:warehouseId'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.warehouses.get()
+app.endpoints.ShipEngine.warehouses.get()
 ```
 ---
 * API URL: '/warehouses'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.warehouses.get()
+app.endpoints.ShipEngine.warehouses.get()
 ```
 ---
 * API URL: '/labels'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.labels.get()
+app.endpoints.ShipEngine.labels.get()
 ```
 ---
 * API URL: '/batches/:batchId'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.batches.get()
+app.endpoints.ShipEngine.batches.get()
 ```
 ---
 * API URL: '/batches'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.batches.get()
+app.endpoints.ShipEngine.batches.get()
 ```
 ---
 * API URL: '/batches/external_batch_id/:externalBatchId'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.batches.externalBatchId.get(externalBatchId)
+app.endpoints.ShipEngine.batches.externalBatchId.get(externalBatchId)
 ```
 ---
 * API URL: '/batches/:batchId/errors'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.batches.errors.get(batchId)
+app.endpoints.ShipEngine.batches.errors.get(batchId)
 ```
 ---
 * API URL: '/shipments/:shipmentId/rates'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.shipments.rates.get(shipmentId)
+app.endpoints.ShipEngine.shipments.rates.get(shipmentId)
 ```
 ---
 * API URL: '/connections/carriers/fedex/:fedexId/settings'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.fedex.settings.get(fedexId)
+app.endpoints.ShipEngine.connections.carriers.fedex.settings.get(fedexId)
 ```
 ---
 * API URL: '/connections/carriers/ups/:upsId/settings'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.ups.settings.get(upsId)
+app.endpoints.ShipEngine.connections.carriers.ups.settings.get(upsId)
 ```
 ---
 * API URL: '/carriers'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.carriers.get()
+app.endpoints.ShipEngine.carriers.get()
 ```
 ---
 * API URL: '/carriers/:carrierId'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.carriers.get()
+app.endpoints.ShipEngine.carriers.get()
 ```
 ---
 * API URL: '/carriers/:carrierId/services'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.carriers.services.get(carrierId)
+app.endpoints.ShipEngine.carriers.services.get(carrierId)
 ```
 ---
 * API URL: '/carriers/:carrierId/options'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.carriers.options.get(carrierId)
+app.endpoints.ShipEngine.carriers.options.get(carrierId)
 ```
 ---
 * API URL: '/carriers/:carrierId/packages'
 * HTTP Method: 'GET'
 ```javascript
-app.endpoints.mailchimp.carriers.packages.get(carrierId)
+app.endpoints.ShipEngine.carriers.packages.get(carrierId)
 ```
 ---
 * API URL: '/shipments/:shipmentId/tags/:tagName'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.shipments.tags.delete(shipmentId, tagName)
+app.endpoints.ShipEngine.shipments.tags.delete(shipmentId, tagName)
 ```
 ---
 * API URL: '/tags/:tagName'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.tags.delete(tagName)
+app.endpoints.ShipEngine.tags.delete(tagName)
 ```
 ---
 * API URL: '/warehouses/:warehouseId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.warehouses.delete(warehouseId)
+app.endpoints.ShipEngine.warehouses.delete(warehouseId)
 ```
 ---
 * API URL: '/batches/:batchId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.batches.delete(batchId)
+app.endpoints.ShipEngine.batches.delete(batchId)
 ```
 ---
 * API URL: '/connections/carriers/fedex/:fedexId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.fedex.delete(fedexId)
+app.endpoints.ShipEngine.connections.carriers.fedex.delete(fedexId)
 ```
 ---
 * API URL: '/connections/carriers/ups/:upsId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.ups.delete()
+app.endpoints.ShipEngine.connections.carriers.ups.delete()
 ```
 ---
 * API URL: '/connections/carriers/ups/:upsId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.ups.delete()
+app.endpoints.ShipEngine.connections.carriers.ups.delete()
 ```
 ---
 * API URL: '/connections/carriers/ups/:upsId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.ups.delete()
+app.endpoints.ShipEngine.connections.carriers.ups.delete()
 ```
 ---
 * API URL: '/connections/carriers/stamps_com/:stampsId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.stampsCom.delete(stampsId)
+app.endpoints.ShipEngine.connections.carriers.stampsCom.delete(stampsId)
 ```
 ---
 * API URL: '/connections/carriers/endicia/:endiciaId'
 * HTTP Method: 'DELETE'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.endicia.delete(endiciaId)
+app.endpoints.ShipEngine.connections.carriers.endicia.delete(endiciaId)
 ```
 ---
 * API URL: '/addresses/recognize'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.addresses.recognize.put(body)
+app.endpoints.ShipEngine.addresses.recognize.put(body)
 ```
 ---
 * API URL: '/shipments/:shipmentId'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.shipments.put(shipmentId, body)
+app.endpoints.ShipEngine.shipments.put(shipmentId, body)
 ```
 ---
 * API URL: '/packages/:packageId'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.packages.put(packageId, body)
+app.endpoints.ShipEngine.packages.put(packageId, body)
 ```
 ---
 * API URL: '/tags/:tagName/:newTagName'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.tags.put(tagName, newTagName, body)
+app.endpoints.ShipEngine.tags.put(tagName, newTagName, body)
 ```
 ---
 * API URL: '/warehouses/:warehouseId'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.warehouses.put(warehouseId, body)
+app.endpoints.ShipEngine.warehouses.put(warehouseId, body)
 ```
 ---
 * API URL: '/labels/:labelId/void'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.labels.void.put(labelId, body)
+app.endpoints.ShipEngine.labels.void.put(labelId, body)
 ```
 ---
 * API URL: '/connections/carriers/fedex/:fedexId/settings'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.fedex.settings.put(fedexId, body)
+app.endpoints.ShipEngine.connections.carriers.fedex.settings.put(fedexId, body)
 ```
 ---
 * API URL: '/connections/carriers/ups/:upsId/settings'
 * HTTP Method: 'PUT'
 ```javascript
-app.endpoints.mailchimp.connections.carriers.ups.settings.put(upsId, body)
+app.endpoints.ShipEngine.connections.carriers.ups.settings.put(upsId, body)
 ```
 ---
 

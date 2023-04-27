@@ -90,14 +90,14 @@ endpoint.labels.void = {};
 
 endpoint.addresses.validate.post = function(httpOptions) {
     var url = parse('/addresses/validate');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.shipments.post = function(httpOptions) {
     var url = parse('/shipments');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -108,7 +108,7 @@ endpoint.shipments.tags.post = function(shipmentId, tagName, httpOptions) {
         return;
     }
     var url = parse('/shipments/:shipmentId/tags/:tagName', [shipmentId, tagName]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -119,21 +119,21 @@ endpoint.tags.post = function(tagName, httpOptions) {
         return;
     }
     var url = parse('/tags/:tagName', [tagName]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.warehouses.post = function(httpOptions) {
     var url = parse('/warehouses');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.labels.post = function(httpOptions) {
     var url = parse('/labels');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -144,7 +144,7 @@ endpoint.labels.rates.post = function(rateId, httpOptions) {
         return;
     }
     var url = parse('/labels/rates/:rateId', [rateId]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -155,7 +155,7 @@ endpoint.labels.shipment.post = function(shipmentId, httpOptions) {
         return;
     }
     var url = parse('/labels/shipment/:shipmentId', [shipmentId]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -166,28 +166,28 @@ endpoint.labels.return.post = function(labelId, httpOptions) {
         return;
     }
     var url = parse('/labels/:label_id/return', [labelId]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.tracking.start.post = function(httpOptions) {
     var url = parse('/tracking/start');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.tracking.stop.post = function(httpOptions) {
     var url = parse('/tracking/stop');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.batches.post = function(httpOptions) {
     var url = parse('/batches');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -198,7 +198,7 @@ endpoint.batches.add.post = function(batchId, httpOptions) {
         return;
     }
     var url = parse('/batches/:batchId/add', [batchId]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -209,7 +209,7 @@ endpoint.batches.remove.post = function(batchId, httpOptions) {
         return;
     }
     var url = parse('/batches/:batchId/remove', [batchId]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -220,56 +220,56 @@ endpoint.batches.process.labels.post = function(batchId, httpOptions) {
         return;
     }
     var url = parse('/batches/:batchId/process/labels', [batchId]);
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.rates.post = function(httpOptions) {
     var url = parse('/rates');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.rates.estimate.post = function(httpOptions) {
     var url = parse('/rates/estimate');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.rates.bulk.post = function(httpOptions) {
     var url = parse('/rates/bulk');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.connections.carriers.fedex.post = function(httpOptions) {
     var url = parse('/connections/carriers/fedex');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.connections.carriers.ups.post = function(httpOptions) {
     var url = parse('/connections/carriers/ups');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.connections.carriers.stampsCom.post = function(httpOptions) {
     var url = parse('/connections/carriers/stamps_com');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
 
 endpoint.connections.carriers.endicia.post = function(httpOptions) {
     var url = parse('/connections/carriers/endicia');
-    sys.logs.debug('[mailchimp] POST from: ' + url);
+    sys.logs.debug('[ShipEngine] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };
@@ -295,7 +295,7 @@ endpoint.shipments.get = function(shipmentId, httpOptions) {
             sys.logs.error('Invalid argument received.');
             return;
     }
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
 	var options = checkHttpOptions(url, httpOptions);
 	return endpoint._get(options);
 };
@@ -306,7 +306,7 @@ endpoint.packages.get = function(packageId, httpOptions) {
         return;
     }
     var url = parse('/packages/:packageId', [packageId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -332,14 +332,14 @@ endpoint.manifests.get = function(manifestId, httpOptions) {
             sys.logs.error('Invalid argument received.');
             return;
     }
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
 	var options = checkHttpOptions(url, httpOptions);
 	return endpoint._get(options);
 };
 
 endpoint.tags.get = function(httpOptions) {
     var url = parse('/tags');
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -365,14 +365,14 @@ endpoint.warehouses.get = function(warehouseId, httpOptions) {
             sys.logs.error('Invalid argument received.');
             return;
     }
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
 	var options = checkHttpOptions(url, httpOptions);
 	return endpoint._get(options);
 };
 
 endpoint.labels.get = function(httpOptions) {
     var url = parse('/labels');
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -398,7 +398,7 @@ endpoint.batches.get = function(batchId, httpOptions) {
             sys.logs.error('Invalid argument received.');
             return;
     }
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
 	var options = checkHttpOptions(url, httpOptions);
 	return endpoint._get(options);
 };
@@ -409,7 +409,7 @@ endpoint.batches.externalBatchId.get = function(externalBatchId, httpOptions) {
         return;
     }
     var url = parse('/batches/external_batch_id/:externalBatchId', [externalBatchId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -420,7 +420,7 @@ endpoint.batches.errors.get = function(batchId, httpOptions) {
         return;
     }
     var url = parse('/batches/:batchId/errors', [batchId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -431,7 +431,7 @@ endpoint.shipments.rates.get = function(shipmentId, httpOptions) {
         return;
     }
     var url = parse('/shipments/:shipmentId/rates', [shipmentId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -442,7 +442,7 @@ endpoint.connections.carriers.fedex.settings.get = function(fedexId, httpOptions
         return;
     }
     var url = parse('/connections/carriers/fedex/:fedexId/settings', [fedexId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -453,7 +453,7 @@ endpoint.connections.carriers.ups.settings.get = function(upsId, httpOptions) {
         return;
     }
     var url = parse('/connections/carriers/ups/:upsId/settings', [upsId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -479,7 +479,7 @@ endpoint.carriers.get = function(carrierId, httpOptions) {
             sys.logs.error('Invalid argument received.');
             return;
     }
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
 	var options = checkHttpOptions(url, httpOptions);
 	return endpoint._get(options);
 };
@@ -490,7 +490,7 @@ endpoint.carriers.services.get = function(carrierId, httpOptions) {
         return;
     }
     var url = parse('/carriers/:carrierId/services', [carrierId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -501,7 +501,7 @@ endpoint.carriers.options.get = function(carrierId, httpOptions) {
         return;
     }
     var url = parse('/carriers/:carrierId/options', [carrierId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -512,7 +512,7 @@ endpoint.carriers.packages.get = function(carrierId, httpOptions) {
         return;
     }
     var url = parse('/carriers/:carrierId/packages', [carrierId]);
-    sys.logs.debug('[mailchimp] GET from: ' + url);
+    sys.logs.debug('[ShipEngine] GET from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._get(options);
 };
@@ -523,7 +523,7 @@ endpoint.shipments.tags.delete = function(shipmentId, tagName, httpOptions) {
         return;
     }
     var url = parse('/shipments/:shipmentId/tags/:tagName', [shipmentId, tagName]);
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._delete(options);
 };
@@ -534,7 +534,7 @@ endpoint.tags.delete = function(tagName, httpOptions) {
         return;
     }
     var url = parse('/tags/:tagName', [tagName]);
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._delete(options);
 };
@@ -545,7 +545,7 @@ endpoint.warehouses.delete = function(warehouseId, httpOptions) {
         return;
     }
     var url = parse('/warehouses/:warehouseId', [warehouseId]);
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._delete(options);
 };
@@ -556,7 +556,7 @@ endpoint.batches.delete = function(batchId, httpOptions) {
         return;
     }
     var url = parse('/batches/:batchId', [batchId]);
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._delete(options);
 };
@@ -567,7 +567,7 @@ endpoint.connections.carriers.fedex.delete = function(fedexId, httpOptions) {
         return;
     }
     var url = parse('/connections/carriers/fedex/:fedexId', [fedexId]);
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._delete(options);
 };
@@ -586,11 +586,17 @@ endpoint.connections.carriers.ups.delete = function(upsId, httpOptions) {
         case 1:
 			url = parse('/connections/carriers/ups/:upsId', [upsId]);
 			break;
+		case 1:
+			url = parse('/connections/carriers/ups/:upsId', [upsId]);
+			break;
+		case 1:
+			url = parse('/connections/carriers/ups/:upsId', [upsId]);
+			break;
 		default:
             sys.logs.error('Invalid argument received.');
             return;
     }
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
 	var options = checkHttpOptions(url, httpOptions);
 	return endpoint._delete(options);
 };
@@ -601,7 +607,7 @@ endpoint.connections.carriers.stampsCom.delete = function(stampsId, httpOptions)
         return;
     }
     var url = parse('/connections/carriers/stamps_com/:stampsId', [stampsId]);
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._delete(options);
 };
@@ -612,14 +618,14 @@ endpoint.connections.carriers.endicia.delete = function(endiciaId, httpOptions) 
         return;
     }
     var url = parse('/connections/carriers/endicia/:endiciaId', [endiciaId]);
-    sys.logs.debug('[mailchimp] DELETE from: ' + url);
+    sys.logs.debug('[ShipEngine] DELETE from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._delete(options);
 };
 
 endpoint.addresses.recognize.put = function(httpOptions) {
     var url = parse('/addresses/recognize');
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
@@ -630,7 +636,7 @@ endpoint.shipments.put = function(shipmentId, httpOptions) {
         return;
     }
     var url = parse('/shipments/:shipmentId', [shipmentId]);
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
@@ -641,7 +647,7 @@ endpoint.packages.put = function(packageId, httpOptions) {
         return;
     }
     var url = parse('/packages/:packageId', [packageId]);
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
@@ -652,7 +658,7 @@ endpoint.tags.put = function(tagName, newTagName, httpOptions) {
         return;
     }
     var url = parse('/tags/:tagName/:newTagName', [tagName, newTagName]);
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
@@ -663,7 +669,7 @@ endpoint.warehouses.put = function(warehouseId, httpOptions) {
         return;
     }
     var url = parse('/warehouses/:warehouseId', [warehouseId]);
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
@@ -674,7 +680,7 @@ endpoint.labels.void.put = function(labelId, httpOptions) {
         return;
     }
     var url = parse('/labels/:labelId/void', [labelId]);
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
@@ -685,7 +691,7 @@ endpoint.connections.carriers.fedex.settings.put = function(fedexId, httpOptions
         return;
     }
     var url = parse('/connections/carriers/fedex/:fedexId/settings', [fedexId]);
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
@@ -696,7 +702,7 @@ endpoint.connections.carriers.ups.settings.put = function(upsId, httpOptions) {
         return;
     }
     var url = parse('/connections/carriers/ups/:upsId/settings', [upsId]);
-    sys.logs.debug('[mailchimp] PUT from: ' + url);
+    sys.logs.debug('[ShipEngine] PUT from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._put(options);
 };
