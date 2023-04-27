@@ -1,7 +1,7 @@
 ---
 title: ShipEngine endpoint
 keywords: 
-last_updated: October 16, 2019
+last_updated: April 27, 2023
 tags: []
 summary: "Detailed description of the API of the ShipEngine endpoint."
 ---
