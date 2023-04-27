@@ -1,5 +1,5 @@
-step.stopTrakingShipEngine = function (inputs) {
-
+step = {};
+step.trackingShipEngine = function (inputs) {
 	var inputsLogic = {
 		params:{
 			carrier_code:inputs.carrierCode || "",
@@ -8,9 +8,11 @@ step.stopTrakingShipEngine = function (inputs) {
 	};
 
 	var options = {
-		path: "/tracking/stop",
+		path: "/tracking",
 		params: inputsLogic.params,
 	}
 
-	return endpoint._post(options);
+	return JSON.stringify(options);
+
+	// return endpoint._get(options);
 }

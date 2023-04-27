@@ -1,6 +1,6 @@
 {
   "label": "Start Tracking Updates",
-  "name": "startTrakingShipEngine",
+  "name": "startTrackingShipEngine",
   "category": "integrations",
   "description": "This step allows you to subscribe to tracking updates for a package.",
   "inputs": [

@@ -1,4 +1,4 @@
-step.trakingShipEngine = function (inputs) {
+step.startTrackingShipEngine = function (inputs) {
 
 	var inputsLogic = {
 		params:{
@@ -8,9 +8,9 @@ step.trakingShipEngine = function (inputs) {
 	};
 
 	var options = {
-		path: "/tracking",
+		path: "/tracking/start",
 		params: inputsLogic.params,
 	}
 
-	return endpoint._get(options);
+	return endpoint._post(options);
 }
