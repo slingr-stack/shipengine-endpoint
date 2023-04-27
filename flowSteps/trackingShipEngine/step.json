@@ -9,8 +9,8 @@
       "name": "carrierCode",
       "type": "dropDown",
       "description": "Supported Carriers.",
-      "required": "true",
-      "typeOptions": {
+      "multiplicity": "one",
+      "options": {
         "possibleValues": [
           {
             "label": "U.S. Postal Service",
@@ -205,10 +205,20 @@
             "name": "toll_priority"
           },
           {
-            "label": "wizmo",
+            "label": "Wizmo",
             "name": "wizmo"
           }
-        ]
+        ],
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Tracking Number",
+      "name": "trackingNumber",
+      "description": "A unique identification code assigned to a package",
+      "type": "text",
+      "options": {
+        "allowContextSelector": "true"
       }
     }
   ],
