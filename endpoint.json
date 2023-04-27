@@ -55,7 +55,7 @@
     "apiCallShipEngine",
     "trakingShipEngine",
     "startTrakingShipEngine",
-    "stopTrakingShipengine"
+    "stopTrakingShipEngine"
   ],
   "listeners": [],
   "configuration": [

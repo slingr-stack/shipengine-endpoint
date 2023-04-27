@@ -1,4 +1,4 @@
-step.trakingShipEngine = function (inputs) {
+step.startTrakingShipEngine = function (inputs) {
 
 	var inputsLogic = {
 		params:{

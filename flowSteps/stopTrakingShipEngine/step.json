@@ -1,8 +1,8 @@
 {
-  "label": "Get lists info",
+  "label": "Stop Tracking Updates",
   "name": "stopTrakingShipEngine",
   "category": "integrations",
-  "description": "Get information about all lists in the account.",
+  "description": "This step allows you to unsubscribe from tracking updates for a package.",
   "inputs": [
     {
       "label": "Carrier Code",

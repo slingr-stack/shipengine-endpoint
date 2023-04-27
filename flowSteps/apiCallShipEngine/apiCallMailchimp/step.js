@@ -14,7 +14,7 @@
  * {number} connectionTimeout, Read timeout interval, in milliseconds.
  * {number} readTimeout, Connect timeout interval, in milliseconds.
  */
-step.apiCallShipEngine = function (inputs) {
+step.apiCallMailchimp = function (inputs) {
 
 	var inputsLogic = {
 		headers: inputs.headers || [],
