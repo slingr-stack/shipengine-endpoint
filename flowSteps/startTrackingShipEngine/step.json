@@ -208,13 +208,16 @@
             "label": "wizmo",
             "name": "wizmo"
           }
-        ],
-        "outputs": [
-          {
-            "label": "Response",
-            "name": "response",
-            "type": "object",
-            "description": "The response to external URL"
-          }
         ]
       }
+    }
+  ],
+  "outputs": [
+    {
+      "label": "Response",
+      "name": "response",
+      "type": "object",
+      "description": "The response to external URL"
+    }
+  ]
+}
