@@ -480,38 +480,6 @@ Generic flow step for full use of the entire endpoint and its services.
         </td>
     </tr>
     <tr>
-        <td>Event</td>
-        <td>dropDown</td>
-        <td>no</td>
-        <td> - </td>
-        <td>Always</td>
-        <td>
-            Used to define event after the call. <br>
-            Possible values are: <br>
-            File Downloaded, Callback
-        </td>
-    </tr>
-    <tr>
-        <td>Callback data</td>
-        <td>textarea</td>
-        <td>no</td>
-        <td> - </td>
-        <td> Event is Callback </td>
-        <td>
-            This is an object you can send that you will get back when the function is processed.
-        </td>
-    </tr>
-    <tr>
-        <td>Callbacks</td>
-        <td>Script</td>
-        <td>no</td>
-        <td> - </td>
-        <td> Event is Callback </td>
-        <td>
-            This is a map where you can listen for different function
-        </td>
-    </tr>
-    <tr>
         <td>Override Settings</td>
         <td>boolean</td>
         <td>no</td>
