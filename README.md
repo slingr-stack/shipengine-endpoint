@@ -158,7 +158,7 @@ SLINGR is a low-code rapid application development platform that accelerates dev
 
 This endpoint is licensed under the Apache License 2.0. See the `LICENSE` file for more details.
 
-# PandaDoc V1.0.0
+# ShipEngine v1.0.0
 
 # Javascript API
 
