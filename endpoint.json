@@ -49,8 +49,13 @@
     }
   ],
   "scripts": [
-    "shipengine-helpers.js",
     "functions.js"
+  ],
+  "flowSteps": [
+    "apiCallShipEngine",
+    "trackingShipEngine",
+    "startTrackingShipEngine",
+    "stopTrackingShipEngine"
   ],
   "listeners": [],
   "configuration": [

@@ -1,0 +1,372 @@
+{
+    "fileName": "functions",
+    "apiDescriptors": [
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/addresses/validate"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/shipments"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/shipments/:shipmentId/tags/:tagName"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/tags/:tagName"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/warehouses"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/labels"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/labels/rates/:rateId"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/labels/shipment/:shipmentId"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/labels/:label_id/return"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/tracking/start"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/tracking/stop"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches/:batchId/add"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches/:batchId/remove"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches/:batchId/process/labels"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/rates"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/rates/estimate"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/rates/bulk"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/fedex"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/ups"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/stamps_com"
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/endicia"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/shipments"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/shipments/:shipmentId"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/packages/:packageId"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/manifests/:manifestId"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/manifests"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/tags"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/warehouses/:warehouseId"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/warehouses"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/labels"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches/:batchId"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches/external_batch_id/:externalBatchId"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches/:batchId/errors"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/shipments/:shipmentId/rates"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/fedex/:fedexId/settings"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/ups/:upsId/settings"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/carriers"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/carriers/:carrierId/services"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/carriers/:carrierId/options"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/carriers/:carrierId/packages"
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/carriers/:carrierId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/shipments/:shipmentId/tags/:tagName"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/tags/:tagName"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/warehouses/:warehouseId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/batches/:batchId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/fedex/:fedexId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/ups/:upsId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/stamps_com/:stampsId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/endicia/:endiciaId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/ups/:upsId"
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/ups/:upsId"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/addresses/recognize"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/shipments/:shipmentId"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/packages/:packageId"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/tags/:tagName/:newTagName"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/warehouses/:warehouseId"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/labels/:labelId/void"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/fedex/:fedexId/settings"
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/connections/carriers/ups/:upsId/settings"
+        }
+    ],
+    "endpointName": "mailchimp"
+}
